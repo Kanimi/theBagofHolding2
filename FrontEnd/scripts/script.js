@@ -49,13 +49,11 @@ makeRequest()
                     let tabData = document.createElement("td");
                     tabData.innerText = item[key];
                     console.log(item[key]);
-                    
                     tabRow.appendChild(tabData);
                 }
             }
             document.getElementById("dice_table").appendChild(tabRow);
         }
-       // dataInput(JSON.parse(data));
     })
     .catch((error)=>{
         console.log("It Failed",error);

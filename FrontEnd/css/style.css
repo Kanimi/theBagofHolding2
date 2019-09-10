@@ -15,3 +15,7 @@
 .blocks .card .card-header{
   background: gainsboro;
 }
+
+input[type=number]{
+  width: 100px;
+}

@@ -24,64 +24,39 @@ number.onkeydown = function(keys){
     }
 }
 
-// function makeRequest(){
-//     return new Promise((resolve,reject)=>{
-//         const xhr = new XMLHttpRequest();
-//         xhr.onload = () => {
-//             if (xhr.status ==200) {
-//                 resolve(xhr.response);} 
-//             else {reject("Request Failed");}
-//         };
-//         xhr.open("GET","");
-//         xhr.send();
-//     });
-// }
+function makeRequest(){
+    return new Promise((resolve,reject)=>{
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+            if (xhr.status ==200) {
+                resolve(xhr.response);} 
+            else {reject("Request Failed");}
+        };
+        xhr.open("GET","http://localhost:9000/dice");
+        xhr.send();
+    });
+}
 
-// makeRequest()
-//     .then((data)=>{
-//         console.log("It Worked",data);
-//         dataInput(JSON.parse(data));
-//     })
-//     .catch((error)=>{
-//         console.log("It Failed",error);
-//     });
-
-// function dataInput(data){
-//     var head =[];
-//     for(var i in data){
-//         if (data.hasOwnProperty() && data[i] != "members"){
-//             head.push(String(i+": "+data[i]));
-//         }
-//     }
-//     var header = document.createElement('h1');
-//     header.innerText = head;
-//     document.getElementById("other").appendChild(header);
-
-//     for (i=0;i<data.members.length;i++){
-//         var tr = document.createElement('tr');
-//         tr.id = "row"+i;
-//         document.getElementById("body").appendChild(tr);
-//         var th = document.createElement('th');
-//         th.scope = "row";
-//         th.innerText = i+1;
-//         document.getElementById("row"+i).appendChild(th);
-//         for (j=0;j<4;j++){
-//             var td = document.createElement('td');
-//             switch(j){
-//                 case 0:
-//                 td.innerText = data.members[i].name;
-//                 break;
-//                 case 1:
-//                 td.innerText = data.members[i].age;
-//                 break;
-//                 case 2:
-//                 td.innerText = data.members[i].secretIdentity;
-//                 break;
-//                 case 3:
-//                 td.innerText = data.members[i].powers;
-//                 break;
-//             }
-//             document.getElementById("row"+i).appendChild(td);
-//         }
-//     }
-// }
+makeRequest()
+    .then((data)=>{
+        console.log("It Worked",data);
+        let parsedData = JSON.parse(data);
+        for(item of parsedData){
+            console.log(item);
+            let tabRow = document.createElement("tr");
+            for(key in item){
+                if(item.hasOwnProperty(key)){
+                    let tabData = document.createElement("td");
+                    tabData.innerText = item[key];
+                    console.log(item[key]);
+                    
+                    tabRow.appendChild(tabData);
+                }
+            }
+            document.getElementById("dice_table").appendChild(tabRow);
+        }
+       // dataInput(JSON.parse(data));
+    })
+    .catch((error)=>{
+        console.log("It Failed",error);
+    });

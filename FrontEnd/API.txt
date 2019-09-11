@@ -1,0 +1,70 @@
+{
+	"dice" : [
+		{
+			"amount" : "20",
+			"colour" : "Red",
+			"material" : "Other",
+			"type" : "D6"
+		},
+		{
+			"amount" : "1",
+			"colour" : "White",
+			"material" : "Plastic",
+			"type" : "D20"			
+		},
+		{
+			"amount" : "20",
+			"colour" : "Grey",
+			"material" : "Plastic",
+			"type" : "D6"
+		},
+		{
+			"amount" : "20",
+			"colour" : "White",
+			"material" : "Plastic",
+			"type" : "D6"
+		},
+		{
+			"amount" : "8",
+			"colour" : "White",
+			"material" : "Plastic",
+			"type" : "D10"
+		},
+		{
+			"amount" : "8",
+			"colour" : "Black",
+			"material" : "Plastic",
+			"type" : "D10"
+		},
+		{
+			"amount" : "20",
+			"colour" : "Other",
+			"material" : "Plastic",
+			"type" : "D6"
+		},
+		{
+			"amount" : "1",
+			"colour" : "Mixed",
+			"material" : "Plastic",
+			"type" : "Dice Set"
+		},
+		{
+			"amount" : "1",
+			"colour" : "White",
+			"material" : "Plastic",
+			"type" : "Dice Set"
+		},
+		{
+			"amount" : "1",
+			"colour" : "Black",
+			"material" : "Plastic",
+			"type" : "D6"
+		},
+		{
+			"amount" : "1",
+			"colour" : "Red",
+			"material" : "Plastic",
+			"type" : "D20"
+		},
+		]
+}

@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,90 +12,7 @@
 </head>
 
 <body>
-    <div class="banner"></div>
-    <div class="container blocks mt-4 col-md-12">
-        <div class="card">
-            <div class="card-header bg-dark text-white">
-                Add Dice
-            </div>
-            <div class="card-body">
-                <form onsubmit="return handleSubmit(this)">
-                    <table>
-                        <tr>
-                            <td><input class="form-control" id="amount" type="number" onkeydown="return numsOnly(event)" placeholder="Amount" min="0"></td>
-                            <td>
-                                <select
-                                    class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle">
-                                    <option value="" disabled selected>Colour</option>
-                                    <option value="1">Red</option>
-                                    <option value="2">Orange</option>
-                                    <option value="3">Yellow</option>
-                                    <option value="4">Green</option>
-                                    <option value="5">Blue</option>
-                                    <option value="6">Purple</option>
-                                    <option value="7">Black</option>
-                                    <option value="8">White</option>
-                                    <option value="9">Grey</option>
-                                    <option value="10">Mixed</option>
-                                    <option value="11">Other</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select
-                                    class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle">
-                                    <option value="" disabled selected>Material</option>
-                                    <option value="1">Plastic</option>
-                                    <option value="2">Acrylic</option>
-                                    <option value="3">Resin</option>
-                                    <option value="4">Metal</option>
-                                    <option value="5">Stone</option>
-                                    <option value="6">Wood</option>
-                                    <option value="7">Other</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select
-                                    class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle">
-                                    <option value="" disabled selected>Type</option>
-                                    <option value="1">Dice Set</option>
-                                    <option value="2">D20</option>
-                                    <option value="3">D12</option>
-                                    <option value="4">D10</option>
-                                    <option value="5">D00</option>
-                                    <option value="6">D8</option>
-                                    <option value="7">D6</option>
-                                    <option value="8">D4</option>
-                                    <option value="9">Other</option>
-                                </select>
-                            </td>
-                            <td style="text-align:right; width:100%; padding:0;">
-                                <button type="button" class="btn btn-danger" onload="addDice()">Submit</button>
-                            </td>
-                        </tr>
-                    </table>
-            </div>
-        </div>
-        <div class="mt-2 col-md-12">
-
-        </div>
-        <div>
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Colour</th>
-                        <th scope="col">Material</th>
-                        <th scope="col">Type</th>
-                    </tr>
-                </thead>
-                <tbody onload="makeRequest()" id="dice_table">
-
-                </tbody>
-            </table>
-            </form>
-        </div>
-    </div>
+    
 </body>
 
 <footer>
@@ -108,7 +25,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="scripts/indexpage.js"></script>
+    <script src="scripts/index.js"></script>
 </footer>
 
 </html>

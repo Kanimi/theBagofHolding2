@@ -33,11 +33,11 @@
     <div class="container blocks mt-4 col-md-12">
         <div class="card">
             <div class="card-header bg-dark text-white">
-                Add Dice
+                Manage Dice
             </div>
             <div class="card-body">
-                <form onsubmit="return handleSubmit(this)">
-                    <table>
+                <table>
+                    <form onsubmit="return handleSubmit(this)">
                         <tr>
                             <td><input class="form-control" id="amount" type="number" name="amount"
                                     onkeydown="return numsOnly(event)" placeholder="Amount" min="0"></td>
@@ -89,11 +89,25 @@
                                     <option value="Other">Other</option>
                                 </select>
                             </td>
-                            <td style="text-align:right; width:100%; padding:0;">
-                                <input type="submit" class="btn btn-danger" value="Submit"></input>
+                            <td>
+                                <input type="submit" class="btn btn-danger" value="Add"></input>
                             </td>
                         </tr>
-                    </table>
+                    </form>
+                </table>
+                <table>
+                    <form onsubmit="return deleteDice(this)">
+                        <tr>
+                            <td>
+                                <input class="form-control" id="remove" type="text" placeholder="Remove Dice By ID">
+                            </td>
+                            <td>
+                                <input type="submit" class="btn btn-danger" value="Delete"></input>
+                            </td>
+                        </tr>
+                    </form>
+
+                </table>
             </div>
         </div>
         <div class="mt-2 col-md-12">

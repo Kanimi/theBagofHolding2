@@ -16,24 +16,35 @@ function handleSubmit(form) {
     return true;
 }
 
-function deleteDice(http, requestType="DELETE", data){
-    return new Promise((resolve,reject)=>{
-        const xhr = new XMLHttpRequest();
-        xhr.onload = () => {
-            if (xhr.status >=200 && xhr.status <= 202) {
-                resolve(xhr.response);} 
-            else {reject("Request Failed");}
-        };
-        xhr.open(requestType , http);
-
-        if(requestType === "POST" || requestType === "PUT"){
-            xhr.setRequestHeader("Content-Type", "application/json");
-            
-            xhr.send(JSON.stringify(data));
-        } else {
-            xhr.send();
+function deleteDice(form){
+    const formData = {};
+    console.log("called delete");
+    for(let element of form.elements){
+        if(element.name){
+            formData[element.name] = element.value;
+            // console.log(element.value);
         }
-    });
+    }
+    console.log(formData);
+    //makeRequest("http://localhost:9000/dice/" + "","DELETE", formData);
+    return false;
+    // return new Promise((resolve,reject)=>{
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.onload = () => {
+    //         if (xhr.status >=200 && xhr.status <= 202) {
+    //             resolve(xhr.response);} 
+    //         else {reject("Request Failed");}
+    //     };
+    //     xhr.open(requestType , http);
+
+    //     if(requestType === "POST" || requestType === "PUT"){
+    //         xhr.setRequestHeader("Content-Type", "application/json");
+            
+    //         xhr.send(JSON.stringify(data));
+    //     } else {
+    //         xhr.send();
+    //     }
+    // });
 }
 
 // Doesn't allow anything but numbers in the number field (normally it lets through e - + ! * inputs)

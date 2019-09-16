@@ -1,3 +1,8 @@
+//Navigation
+function handleClick() {
+    location.href = 'overview.html';
+}
+
 //Submits a form to be saved to current logged in profile
 function handleSubmit(form) {
     const formData = {};
@@ -8,7 +13,27 @@ function handleSubmit(form) {
     }
     console.log(formData);
     makeRequest("http://localhost:9000/dice","POST", formData);
-    return false;
+    return true;
+}
+
+function deleteDice(http, requestType="DELETE", data){
+    return new Promise((resolve,reject)=>{
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+            if (xhr.status >=200 && xhr.status <= 202) {
+                resolve(xhr.response);} 
+            else {reject("Request Failed");}
+        };
+        xhr.open(requestType , http);
+
+        if(requestType === "POST" || requestType === "PUT"){
+            xhr.setRequestHeader("Content-Type", "application/json");
+            
+            xhr.send(JSON.stringify(data));
+        } else {
+            xhr.send();
+        }
+    });
 }
 
 // Doesn't allow anything but numbers in the number field (normally it lets through e - + ! * inputs)
@@ -23,8 +48,6 @@ number.onkeydown = function(keys){
         return false;
     }
 }
-
-
 
 // Connection request to paste existing data into table
 function makeRequest(http, requestType="GET", data){

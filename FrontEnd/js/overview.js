@@ -1,3 +1,8 @@
+//Navigation
+function handleClick() {
+    location.href = 'dashboard.html';
+}
+
 // Connection request to paste existing data into table
 function makeRequest(http, requestType="GET", data){
     return new Promise((resolve,reject)=>{

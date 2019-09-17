@@ -11,7 +11,181 @@
     <title>Dashboard - the Bag of Holding</title>
 </head>
 
-<body>
+<body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">the Bag of Holding</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="home.html">Home</a>
+                    <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                </nav>
+            </div>
+        </header>
+        <div class="container blocks mt-4"></div>
+        <div class="center">
+            <table>
+                <form onsubmit="return handleSubmit(this)">
+                    <tr>
+                        <td><input class="form-control" id="amount" type="number" name="amount"
+                                onkeydown="return numsOnly(event)" placeholder="Amount" min="0"></td>
+                        <td>
+                            <select
+                                class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
+                                name="colour">
+                                <option value="" disabled selected>Colour</option>
+                                <option value="Red">Red</option>
+                                <option value="Orange">Orange</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="Green">Green</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Black">Black</option>
+                                <option value="White">White</option>
+                                <option value="Grey">Grey</option>
+                                <option value="Mixed">Mixed</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select
+                                class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
+                                name="material">
+                                <option value="" disabled selected>Material</option>
+                                <option value="Plastic">Plastic</option>
+                                <option value="Acrylic">Acrylic</option>
+                                <option value="Resin">Resin</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Stone">Stone</option>
+                                <option value="Wood">Wood</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select
+                                class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
+                                name="type">
+                                <option value="" disabled selected>Type</option>
+                                <option value="Dice Set">Dice Set</option>
+                                <option value="D20">D20</option>
+                                <option value="D12">D12</option>
+                                <option value="D10">D10</option>
+                                <option value="D00">D00</option>
+                                <option value="D8">D8</option>
+                                <option value="D6">D6</option>
+                                <option value="D4">D4</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" class="btn btn-success" value="Add"></input>
+                        </td>
+                    </tr>
+                </form>
+            </table>
+            <table>
+                <form onsubmit="return deleteDice(this)">
+                    <tr>
+                        <td>
+                            <input input class="form-control" id="remove" type="number" name="amountupdate"
+                                onkeydown="return numsOnly(event)" placeholder="Remove Dice By ID" min="0" type="text">
+                        </td>
+                        <td>
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </td>
+                    </tr>
+            </table>
+            <table>
+                <form>
+                    <tr>
+                        <td>
+                            <input class="form-control" type="number" placeholder="ID">
+                        </td>
+                        <td><input class="form-control" id="amount" type="number" name="amountupdate"
+                                onkeydown="return numsOnly(event)" placeholder="Amount" min="0"></td>
+                        <td>
+                            <select
+                                class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
+                                name="colourupdate">
+                                <option value="" disabled selected>Colour</option>
+                                <option value="Red">Red</option>
+                                <option value="Orange">Orange</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="Green">Green</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Black">Black</option>
+                                <option value="White">White</option>
+                                <option value="Grey">Grey</option>
+                                <option value="Mixed">Mixed</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select
+                                class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
+                                name="materialupdate">
+                                <option value="" disabled selected>Material</option>
+                                <option value="Plastic">Plastic</option>
+                                <option value="Acrylic">Acrylic</option>
+                                <option value="Resin">Resin</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Stone">Stone</option>
+                                <option value="Wood">Wood</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select
+                                class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
+                                name="typeupdate">
+                                <option value="" disabled selected>Type</option>
+                                <option value="Dice Set">Dice Set</option>
+                                <option value="D20">D20</option>
+                                <option value="D12">D12</option>
+                                <option value="D10">D10</option>
+                                <option value="D00">D00</option>
+                                <option value="D8">D8</option>
+                                <option value="D6">D6</option>
+                                <option value="D4">D4</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" class="btn btn-primary" value="Update">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+        <div class="container blocks mt-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Colour</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody onload="makeRequest()" id="dice_table">
+
+                </tbody>
+            </table>
+        </div>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Simple CRUD application made with various tools made by <a href="https://github.com/Kanimi">Karolina
+                        Dudek</a>.</p>
+                <p>To see details of the project go to the <a href="https://github.com/Kanimi/theBagofHolding">Github
+                        project</a>.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<!-- <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">the Bag of Holding</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -131,7 +305,7 @@
             </form>
         </div>
     </div>
-</body>
+</body> -->
 
 <footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

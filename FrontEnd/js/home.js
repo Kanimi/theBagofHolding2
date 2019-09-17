@@ -1,0 +1,1 @@
+onload = console.log("This cover page has been made by https://twitter.com/mdo and I have simply adapted it for my project due to time constraints, everything else was made by me (Karolina Dudek).")

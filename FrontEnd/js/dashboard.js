@@ -1,7 +1,59 @@
-//Navigation
+ //Navigation
 function handleClick() {
     location.href = 'overview.html';
 }
+
+//Request
+var request = new XMLHttpRequest();
+
+//Open connection
+request.open('GET', 'http://localhost:9000/dice', true)
+request.onload = makeRequest();{
+    //Create new table rows for each element and insert into table
+    function makeRequest(http, requestType="GET", data){
+        return new Promise((resolve,reject)=>{
+            const xhr = new XMLHttpRequest();
+            xhr.onload = () => {
+                if (xhr.status ==200) {
+                    resolve(xhr.response);} 
+                else {reject("Request Failed");}
+            };
+            xhr.open(requestType , http);
+    
+            if(requestType === "POST" || requestType === "PUT"){
+                xhr.setRequestHeader("Content-Type", "application/json");
+                
+                xhr.send(JSON.stringify(data));
+            } else {
+                xhr.send();
+            }
+        });
+    }
+    
+    makeRequest("http://localhost:9000/dice")
+        .then((data)=>{
+            console.log("It Worked",data);
+            let parsedData = JSON.parse(data);
+            for(item of parsedData){
+                console.log(item);
+                let tabRow = document.createElement("tr");
+                for(key in item){
+                    if(item.hasOwnProperty(key)){
+                        let tabData = document.createElement("td");
+                        tabData.innerText = item[key];
+                        console.log(item[key]);
+                        tabRow.appendChild(tabData);
+                    }
+                }
+                document.getElementById("dice_table").appendChild(tabRow);
+            }
+        })
+        .catch((error)=>{
+            console.log("It Failed",error);
+        });
+}
+//Send request
+request.send();
 
 //Submits a form to be saved to current logged in profile
 function handleSubmit(form) {
@@ -60,45 +112,45 @@ number.onkeydown = function(keys){
     }
 }
 
-// Connection request to paste existing data into table
-function makeRequest(http, requestType="GET", data){
-    return new Promise((resolve,reject)=>{
-        const xhr = new XMLHttpRequest();
-        xhr.onload = () => {
-            if (xhr.status ==200) {
-                resolve(xhr.response);} 
-            else {reject("Request Failed");}
-        };
-        xhr.open(requestType , http);
+// // Connection request to paste existing data into table
+// function makeRequest(http, requestType="GET", data){
+//     return new Promise((resolve,reject)=>{
+//         const xhr = new XMLHttpRequest();
+//         xhr.onload = () => {
+//             if (xhr.status ==200) {
+//                 resolve(xhr.response);} 
+//             else {reject("Request Failed");}
+//         };
+//         xhr.open(requestType , http);
 
-        if(requestType === "POST" || requestType === "PUT"){
-            xhr.setRequestHeader("Content-Type", "application/json");
+//         if(requestType === "POST" || requestType === "PUT"){
+//             xhr.setRequestHeader("Content-Type", "application/json");
             
-            xhr.send(JSON.stringify(data));
-        } else {
-            xhr.send();
-        }
-    });
-}
+//             xhr.send(JSON.stringify(data));
+//         } else {
+//             xhr.send();
+//         }
+//     });
+// }
 
-makeRequest("http://localhost:9000/dice")
-    .then((data)=>{
-        console.log("It Worked",data);
-        let parsedData = JSON.parse(data);
-        for(item of parsedData){
-            console.log(item);
-            let tabRow = document.createElement("tr");
-            for(key in item){
-                if(item.hasOwnProperty(key)){
-                    let tabData = document.createElement("td");
-                    tabData.innerText = item[key];
-                    console.log(item[key]);
-                    tabRow.appendChild(tabData);
-                }
-            }
-            document.getElementById("dice_table").appendChild(tabRow);
-        }
-    })
-    .catch((error)=>{
-        console.log("It Failed",error);
-    });
+// makeRequest("http://localhost:9000/dice")
+//     .then((data)=>{
+//         console.log("It Worked",data);
+//         let parsedData = JSON.parse(data);
+//         for(item of parsedData){
+//             console.log(item);
+//             let tabRow = document.createElement("tr");
+//             for(key in item){
+//                 if(item.hasOwnProperty(key)){
+//                     let tabData = document.createElement("td");
+//                     tabData.innerText = item[key];
+//                     console.log(item[key]);
+//                     tabRow.appendChild(tabData);
+//                 }
+//             }
+//             document.getElementById("dice_table").appendChild(tabRow);
+//         }
+//     })
+//     .catch((error)=>{
+//         console.log("It Failed",error);
+//     });

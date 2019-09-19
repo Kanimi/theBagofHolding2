@@ -28,7 +28,7 @@
                             <p>Username</p>
                         </td>
                         <td>
-                            <input class="form-control" id="username" type="text" placeholder="Username" name="userid">
+                            <input class="form-control" type="text" placeholder="Username" name="userid">
                         </td>
                     </tr>
                     <tr>
@@ -36,26 +36,23 @@
                             <p>Password</p>
                         </td>
                         <td>
-                            <input class="form-control" id="password" type="password" placeholder="Password"
-                                name="pswrd">
+                            <input class="form-control" type="password" placeholder="Password"
+                                name="pswrd" id="myInput">
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <input class="btn btn-lg btn-secondary" type="button" onclick="check(this.form)"
-                                value="Login">
-                        </td>
-                        <td>
-                            <input class="btn btn-lg btn-secondary" type="button" href="register.html" value="Register">
-                        </td>
-                    </tr>
-                </form>
+
             </table>
+            <input class="btn btn-lg btn-secondary" type="button" onclick="check(this.form)" value="Login">
+            <div class="container blocks mt-4"></div>
+            <div class="mastmid mt-auto">
+                <p>Don't have an account?<a href="register.html">Click here to register.</a></p>
+            </div>
         </div>
+            </form>
         <footer class="mastfoot mt-auto">
             <div class="inner">
-                <p>I have made two accounts for the purposes of this demo.</p>
-                <p>admin password & guest password</p>
+                <p>I have created an account for the purposes of this demo.</p>
+                <p>Username: admin Password: password</p>
             </div>
         </footer>
     </div>

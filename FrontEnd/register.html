@@ -62,7 +62,7 @@
         </header>
         <div class="container blocks mt-4"></div>
         <div class="center">
-            <h2>Login</h2>
+            <h2>Register</h2>
             <table>
                 <form>
                     <tr>
@@ -84,15 +84,36 @@
                     </tr>
                     <tr>
                         <td>
-                            <input class="btn btn-lg btn-secondary" type="button" href="register.html" value="Register">
+                            <p>Repeat Password</p>
                         </td>
                         <td>
-                            <input class="btn btn-lg btn-secondary" type="button" onclick="check(this.form)"
-                                value="Login" href="index.html">
+                            <input class="form-control" id="repeatpassword" type="password"
+                                placeholder="Repeat Password" name="rptpswrd">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Email</p>
+                        </td>
+                        <td>
+                            <input class="form-control" id="email" type="text" placeholder="Email" name="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Confirm Email</p>
+                        </td>
+                        <td>
+                            <input class="form-control" id="confirmemail" type="text" placeholder="Confirm Email"
+                                name="confirmemail">
                         </td>
                     </tr>
                 </form>
             </table>
+            <input class="btn btn-lg btn-secondary" type="button" onclick="redirect(this)" value="Back"
+                href="index.html">
+            <input class="btn btn-lg btn-secondary" type="button" href="register.html" value="Register"
+                onclick="redirect(this)">
         </div>
         <footer class="mastfoot mt-auto">
             <div class="inner">

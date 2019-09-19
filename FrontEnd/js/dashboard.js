@@ -59,14 +59,30 @@ function handleSubmit(form) {
     return false;
 }
 
+//Delete dice by ID
 function deleteDice(form){
-    const formData = {};
     console.log("called delete");
     console.log(form.deletebyid.value);
     makeRequest("http://localhost:9000/dice/" + form.deletebyid.value, "DELETE").then(() => {
         window.location.href = window.location.href;
     })
     return false;
+}
+//Update dice by ID
+function updateDice(event, id) {
+	let method = "PUT";
+	let url = "http://localhost:9000/dice/";
+	let callback = displaySubjects;
+	let headers = {
+		"Content-Type": "application/json"
+	}
+	tempObject = JSON.parse(formToObject(event.target));
+	Object.assign(tempObject, {id : id});
+    let body = JSON.stringify(tempObject);
+    console.log(body);
+    httpRequest(method, url, callback, headers, body);
+    document.getElementById('').remove();
+	return false;
 }
 
 // Doesn't allow anything but numbers in the number field (normally it lets through e - + ! * inputs)

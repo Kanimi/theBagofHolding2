@@ -1,4 +1,0 @@
-sudo mysql --host=35.195.105.143 \
-    --user=root --password
-
-gcloud sql connect thebagofholding-db --user=root --quiet

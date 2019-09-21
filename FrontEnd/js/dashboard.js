@@ -1,4 +1,3 @@
-//Request
 var request = new XMLHttpRequest();
 
 // Connection request to paste existing data into table
@@ -62,16 +61,36 @@ function handleSubmit(form) {
 
 //Delete dice by ID
 function deleteDice(form) {
-    console.log("called delete");
-    console.log(form.deletebyid.value);
     makeRequest("http://localhost:9000/dice/" + form.deletebyid.value, "DELETE").then(() => {
         window.location.href = window.location.href;
     })
     return false;
 }
+
+function updateCharacterFields(box){
+    if(box.value !== "n"){
+        
+        let id = parseInt(box.value);
+        makeRequest("http://"+DB_ADDRESS+":9000/characters/", id)
+        .then((data) => {
+            let parsedData = JSON.parse(data);
+            console.log(parsedData);
+            setCharacterFields(parsedData);
+
+        })
+        .catch((data) => {
+
+        });
+        
+    } else {
+        setCharacterFields(false);
+    }
+
+}
+
 //Update dice by ID
 function updateDice(form) {
-    
+    var idVal = document.getElementById("updateID").value;
     const formData = {};
     for (let element of form.elements) {
         if (element.name) {
@@ -79,7 +98,9 @@ function updateDice(form) {
         }
     }
     console.log(formData);
-    makeRequest("http://localhost:9000/dice/", "PUT", formData).then(() => {
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
+    makeRequest("http://localhost:9000/dice/" + idVal, "PUT", formData).then(() => {
         window.location.href = window.location.href;
     });
     return false;

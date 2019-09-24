@@ -100,14 +100,14 @@
                 <form onsubmit="return updateDice(this)">
                     <tr>
                         <td>
-                            <input class="form-control" type="number" placeholder="ID">
+                            <input class="form-control" type="number" placeholder="ID" onkeydown="return numsOnly(event)" min="0" name="updatebyID" id="updatebyID">
                         </td>
-                        <td><input class="form-control" id="amount" type="number" name="amountupdate"
+                        <td><input class="form-control" id="amount" type="number" name="amount"
                                 onkeydown="return numsOnly(event)" placeholder="Amount" min="0"></td>
                         <td>
                             <select
                                 class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
-                                name="colourupdate">
+                                name="colour">
                                 <option value="" disabled selected>Colour</option>
                                 <option value="Red">Red</option>
                                 <option value="Orange">Orange</option>
@@ -125,7 +125,7 @@
                         <td>
                             <select
                                 class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
-                                name="materialupdate">
+                                name="material">
                                 <option value="" disabled selected>Material</option>
                                 <option value="Plastic">Plastic</option>
                                 <option value="Acrylic">Acrylic</option>
@@ -139,7 +139,7 @@
                         <td>
                             <select
                                 class="mdb-select md-form colorful-select dropdown-primary btn btn-secondary dropdown-toggle"
-                                name="typeupdate">
+                                name="type">
                                 <option value="" disabled selected>Type</option>
                                 <option value="Dice Set">Dice Set</option>
                                 <option value="D20">D20</option>
@@ -153,7 +153,7 @@
                             </select>
                         </td>
                         <td>
-                            <input type="submit" class="btn btn-primary" value="Update" id="updatebyid">
+                            <input type="submit" class="btn btn-primary" value="Update">
                         </td>
                     </tr>
                 </form>

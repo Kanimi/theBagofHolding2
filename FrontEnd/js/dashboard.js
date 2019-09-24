@@ -81,8 +81,7 @@ function updateDice(form) {
         }
     }
     console.log(formData);
-    makeRequest(url + id, "PUT", formData);
-    console.log("request").then(() => {
+    makeRequest(url + id, "PUT", formData).then(() => {
         window.location.href = window.location.href;
     });
     return false;

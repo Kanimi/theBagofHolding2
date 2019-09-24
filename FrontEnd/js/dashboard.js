@@ -1,4 +1,5 @@
 var request = new XMLHttpRequest();
+var url = "http://localhost:9000/dice/";
 
 // Connection request to paste existing data into table
 function makeRequest(http, requestType = "GET", data) {
@@ -22,18 +23,18 @@ function makeRequest(http, requestType = "GET", data) {
     });
 }
 
-makeRequest("http://localhost:9000/dice")
+makeRequest(url)
     .then((data) => {
-        console.log("It Worked", data);
+        //console.log("It Worked", data);
         let parsedData = JSON.parse(data);
         for (item of parsedData) {
-            console.log(item);
+            //console.log(item);
             let tabRow = document.createElement("tr");
             for (key in item) {
                 if (item.hasOwnProperty(key)) {
                     let tabData = document.createElement("td");
                     tabData.innerText = item[key];
-                    console.log(item[key]);
+                    //console.log(item[key]);
                     tabRow.appendChild(tabData);
                 }
             }
@@ -44,7 +45,7 @@ makeRequest("http://localhost:9000/dice")
         console.log("It Failed", error);
     });
 
-//Submits a form to be saved to current logged in profile
+// Submits a form to be saved to current logged in profile
 function handleSubmit(form) {
     const formData = {};
     for (let element of form.elements) {
@@ -52,55 +53,36 @@ function handleSubmit(form) {
             formData[element.name] = element.value;
         }
     }
-    console.log(formData);
-    makeRequest("http://localhost:9000/dice", "POST", formData).then(() => {
+    //console.log(formData);
+    makeRequest(url, "POST", formData).then(() => {
         window.location.href = window.location.href;
     });
     return false;
 }
 
-//Delete dice by ID
+// Delete dice by ID
 function deleteDice(form) {
-    makeRequest("http://localhost:9000/dice/" + form.deletebyid.value, "DELETE").then(() => {
+    makeRequest(url + form.deletebyid.value, "DELETE").then(() => {
         window.location.href = window.location.href;
     })
     return false;
 }
 
-function updateCharacterFields(box){
-    if(box.value !== "n"){
-        
-        let id = parseInt(box.value);
-        makeRequest("http://"+DB_ADDRESS+":9000/characters/", id)
-        .then((data) => {
-            let parsedData = JSON.parse(data);
-            console.log(parsedData);
-            setCharacterFields(parsedData);
-
-        })
-        .catch((data) => {
-
-        });
-        
-    } else {
-        setCharacterFields(false);
-    }
-
-}
-
 //Update dice by ID
 function updateDice(form) {
-    var idVal = document.getElementById("updateID").value;
+    console.log(updatebyID.value)
+    let id = parseInt(updatebyID.value);
+    console.log(id);
     const formData = {};
     for (let element of form.elements) {
+        console.log("inside loop")
         if (element.name) {
             formData[element.name] = element.value;
         }
     }
     console.log(formData);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(data));
-    makeRequest("http://localhost:9000/dice/" + idVal, "PUT", formData).then(() => {
+    makeRequest(url + id, "PUT", formData);
+    console.log("request").then(() => {
         window.location.href = window.location.href;
     });
     return false;

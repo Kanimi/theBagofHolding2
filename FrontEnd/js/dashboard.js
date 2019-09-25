@@ -6,7 +6,7 @@ function makeRequest(http, requestType = "GET", data) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.onload = () => {
-            if (xhr.status == 200) {
+            if (xhr.status === 200) {
                 resolve(xhr.response);
             }
             else { reject("Request Failed"); }
@@ -25,16 +25,13 @@ function makeRequest(http, requestType = "GET", data) {
 
 makeRequest(url)
     .then((data) => {
-        //console.log("It Worked", data);
         let parsedData = JSON.parse(data);
         for (item of parsedData) {
-            //console.log(item);
             let tabRow = document.createElement("tr");
             for (key in item) {
                 if (item.hasOwnProperty(key)) {
                     let tabData = document.createElement("td");
                     tabData.innerText = item[key];
-                    //console.log(item[key]);
                     tabRow.appendChild(tabData);
                 }
             }
@@ -64,7 +61,7 @@ function handleSubmit(form) {
 function deleteDice(form) {
     makeRequest(url + form.deletebyid.value, "DELETE").then(() => {
         window.location.href = window.location.href;
-    })
+    });
     return false;
 }
 
@@ -93,9 +90,9 @@ function numsOnly(event) {
 }
 
 // Doesn't allow to go into negative numbers via arrows (minimum 0 selected in html already), 95-106 numpad, 47-58 number row, 8 is backspace
-var number = document.getElementById('amount');
+var number = document.getElementById("amount");
 number.onkeydown = function (keys) {
-    if (!((keys.keyCode > 95 && keys.keyCode < 106) || (keys.keyCode > 47 && keys.keyCode < 58) || keys.keyCode == 8)) {
+    if (!((keys.keyCode > 95 && keys.keyCode < 106) || (keys.keyCode > 47 && keys.keyCode < 58) || keys.keyCode === 8)) {
         return false;
     }
 }

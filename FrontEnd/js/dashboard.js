@@ -67,17 +67,13 @@ function deleteDice(form) {
 
 //Update dice by ID
 function updateDice(form) {
-    console.log(updatebyID.value)
     let id = parseInt(updatebyID.value);
-    console.log(id);
     const formData = {};
     for (let element of form.elements) {
-        console.log("inside loop")
         if (element.name) {
             formData[element.name] = element.value;
         }
     }
-    console.log(formData);
     makeRequest(url + id, "PUT", formData).then(() => {
         window.location.href = window.location.href;
     });

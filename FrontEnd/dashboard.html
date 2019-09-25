@@ -25,7 +25,7 @@
         <div class="container blocks mt-4"></div>
         <div class="center">
             <table>
-                <form onsubmit="return handleSubmit(this)">
+                <form onsubmit="return handleSubmit(this)" id="createdice">
                     <tr>
                         <td><input class="form-control" id="amount" type="number" name="amount"
                                 onkeydown="return numsOnly(event)" placeholder="Amount" min="0"></td>
@@ -84,7 +84,7 @@
                 </form>
             </table>
             <table>
-                <form onsubmit="return deleteDice(this)">
+                <form onsubmit="return deleteDice(this)" id="deletedice">
                     <tr>
                         <td>
                             <input input class="form-control" id="remove" type="number" name="deletebyid"
@@ -97,7 +97,7 @@
                 </form>
             </table>
             <table>
-                <form onsubmit="return updateDice(this)">
+                <form onsubmit="return updateDice(this)" id="updatedice">
                     <tr>
                         <td>
                             <input class="form-control" type="number" placeholder="ID" onkeydown="return numsOnly(event)" min="0" name="updatebyID" id="updatebyID">

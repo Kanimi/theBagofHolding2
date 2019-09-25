@@ -1,3 +1,9 @@
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {

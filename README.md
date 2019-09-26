@@ -10,7 +10,7 @@
 *Please click on the pictures to view full resolution.*
 
 ### Initial Wireframe
-![Initial_Wireframe class=thumbnail](/Documentation/Initial_Wireframe.png "Initial Wireframe")
+![Initial_Wireframe](/Documentation/Initial_Wireframe.png "Initial Wireframe")
 
 ### Login
 ![Login Wireframe](/Documentation/Login_Wireframe.png "Login Wireframe")

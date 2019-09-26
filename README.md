@@ -1,5 +1,5 @@
 # QA Solo Project - the Bag of Holding
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/940be3e5d30f4011b8766c7d915167a7)](https://www.codacy.com/manual/Kanimi/theBagofHoldingFrontEnd?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Kanimi/theBagofHoldingFrontEnd&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/80ed722710274885964f616ed25df8d8)](https://www.codacy.com/manual/Kanimi/theBagofHoldingFrontEnd?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Kanimi/theBagofHoldingFrontEnd&amp;utm_campaign=Badge_Grade)
 
 ## Index
 

@@ -4,11 +4,11 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 
 <body class="text-center">
@@ -20,7 +20,7 @@
         </header>
         <div class="container blocks mt-4"></div>
         <div class="center">
-            <h2>Login</h2>
+            <h2>Register</h2>
             <table>
                 <form>
                     <tr>
@@ -28,7 +28,7 @@
                             <p>Username</p>
                         </td>
                         <td>
-                            <input class="form-control" type="text" placeholder="Username" name="username" id="username">
+                            <input class="form-control" id="username" type="text" placeholder="Username" name="userid">
                         </td>
                     </tr>
                     <tr>
@@ -36,23 +36,46 @@
                             <p>Password</p>
                         </td>
                         <td>
-                            <input class="form-control" type="password" placeholder="Password"
-                                name="password" id="password">
+                            <input class="form-control" id="password" type="password" placeholder="Password"
+                                name="pswrd">
                         </td>
                     </tr>
-
+                    <tr>
+                        <td>
+                            <p>Repeat Password</p>
+                        </td>
+                        <td>
+                            <input class="form-control" id="repeatpassword" type="password"
+                                placeholder="Repeat Password" name="rptpswrd">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Email</p>
+                        </td>
+                        <td>
+                            <input class="form-control" id="email" type="text" placeholder="Email" name="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Confirm Email</p>
+                        </td>
+                        <td>
+                            <input class="form-control" id="confirmemail" type="text" placeholder="Confirm Email"
+                                name="confirmemail">
+                        </td>
+                    </tr>
+                </form>
             </table>
-            <input class="btn btn-lg btn-secondary" type="button" onclick="check(this.form)" value="Login" id="login">
-            <div class="container blocks mt-4"></div>
-            <div class="mastfoot mt-auto">
-                <p>Don't have an account? <a href="register.html" id="registerlink">Click here to register.</a></p>
-            </div>
+            <input class="btn btn-lg btn-secondary" type="button" onclick="redirect(this)" value="Back"
+                href="index.html" id="loginButton">
+            <input class="btn btn-lg btn-secondary" type="button" href="register.html" value="Register"
+                onclick="redirect(this)" id="registerButton">
         </div>
-            </form>
         <footer class="mastfoot mt-auto">
             <div class="inner">
-                <p>I have created an account for the purposes of this demo.</p>
-                <p>Username: admin Password: password</p>
+                <p>This page is not functional, demo purposes only.</p>
             </div>
         </footer>
     </div>
@@ -68,7 +91,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <script src="js/register.js"></script>
 </footer>
 
 </html>

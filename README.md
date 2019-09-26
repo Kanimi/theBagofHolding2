@@ -14,7 +14,7 @@ banner
 
 ### Login
 ![Login Wireframe](/Documentation/Login_Wireframe.png "Login Wireframe")
-![Login Screenshot](/Documentation/Login_Screenshot.png "Login Wireframe")
+![Login Screenshot](/Documentation/Login_Screenshot.png "Login Screenshot")
 
 ### Registration
 ![Registration Wireframe](/Documentation/Registration_Wireframe.png "Registration Wireframe")

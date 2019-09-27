@@ -37,6 +37,7 @@ makeRequest(url)
             }
             document.getElementById("dice_table").appendChild(tabRow);
         }
+    }
     // })
     // .catch((error) => {
     //     //console.log("It Failed", error);

@@ -39,7 +39,7 @@ makeRequest(url)
         }
     })
     .catch((error) => {
-        console.log("It Failed", error);
+        //console.log("It Failed", error);
     });
 
 // Submits a form to be saved to current logged in profile

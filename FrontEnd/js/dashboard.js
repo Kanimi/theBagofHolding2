@@ -1,5 +1,5 @@
 var request = new XMLHttpRequest();
-var url = "http://localhost:9000/dice";
+var url = "http://35.230.156.56:9000/dice";
 
 // Connection request to paste existing data into table
 function makeRequest(http, requestType = "GET", data) {

@@ -38,10 +38,9 @@ makeRequest(url)
             document.getElementById("dice_table").appendChild(tabRow);
         }
     })
-    // })
-    // .catch((error) => {
-    //     //console.log("It Failed", error);
-    // });
+    .catch((error) => {
+        console.log("It Failed", error);
+    });
 
 // Submits a form to be saved to current logged in profile
 function handleSubmit(form) {
